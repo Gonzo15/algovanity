@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "github.com/DJRHails/vanity-algos/cmd"
+import "github.com/Gonzo15/vanity-algos/cmd"
 
 func main() {
 	cmd.Execute()
