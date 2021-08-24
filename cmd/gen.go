@@ -133,7 +133,7 @@ func runGen(cmd *cobra.Command, args []string) error {
 					log.Println(err)
 				}
 				defer f.Close()
-				if _, err := fmt.Fprintf(f, "%d;%s\n", account.Address, passphrase); err != nil {
+				if _, err := fmt.Fprintf(f, "%d\n", account.Address, passphrase); err != nil {
 					log.Println(err)
 				}
 				fmt.Printf("\nFound address: %s\n", account.Address)
