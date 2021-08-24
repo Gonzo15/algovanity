@@ -21,6 +21,8 @@ import (
 	"math"
 	"context"
 	"regexp"
+	"os"
+	"log"
 
 	"github.com/DJRHails/vanity-algos/helpers"
 	"github.com/DJRHails/vanity-algos/process"
@@ -125,7 +127,15 @@ func runGen(cmd *cobra.Command, args []string) error {
 					foundCount--
 					return
 				}
-
+				f, err := os.OpenFile("algorand.csv",
+					os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+				if err != nil {
+					log.Println(err)
+				}
+				defer f.Close()
+				if _, err := fmt.Fprintf(f, "%f;%s\n", account.Address, passphrase); err != nil {
+					log.Println(err)
+				}
 				fmt.Printf("\nFound address: %s\n", account.Address)
 				fmt.Printf("passphrase: %s\n", passphrase)
 
