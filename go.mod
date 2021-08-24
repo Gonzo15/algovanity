@@ -1,4 +1,4 @@
-module github.com/Gonzo15/vanity-algos
+module github.com/Gonzo15/algovanity
 
 go 1.14
 
