@@ -24,8 +24,8 @@ import (
 	"os"
 	"log"
 
-	"github.com/Gonzo15/vanity-algos/helpers"
-	"github.com/Gonzo15/vanity-algos/process"
+	"github.com/Gonzo15/algovanity/helpers"
+	"github.com/Gonzo15/algovanity/process"
 
 	"github.com/spf13/cobra"
 	"github.com/schollz/progressbar/v3"
