@@ -113,6 +113,8 @@ func runGen(cmd *cobra.Command, args []string) error {
 
 	foundCount := 0
 	go func() {
+		f, err := os.OpenFile("algorand.csv",
+			os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 		for {
 			select {
 			case <-ctx.Done():
@@ -127,8 +129,6 @@ func runGen(cmd *cobra.Command, args []string) error {
 					foundCount--
 					return
 				}
-				f, err := os.OpenFile("algorand.csv",
-					os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 				if err != nil {
 					log.Println(err)
 				}
