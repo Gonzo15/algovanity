@@ -116,7 +116,7 @@ func runGen(cmd *cobra.Command, args []string) error {
 		f, err := os.OpenFile("algorand.csv",
 			os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 		if err != nil {
-			fmt.Printf("Error: %s\n", err)
+			log.Println(err)
 		}
 		for {
 			select {
